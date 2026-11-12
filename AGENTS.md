@@ -7,17 +7,19 @@ Formatters that turn numbers, sizes and times into human-friendly strings (`Byte
 
 - Core formatters: `bytes.go`, `comma.go`, `commaf.go`, `ftoa.go`, `number.go`, `ordinals.go`,
   `times.go`.
-- **Synced code — do not edit.** `english/`, `si.go`, `bigbytes.go` and `big.go` are synced from
-  the upstream unit-formatting module and are overwritten on every sync. Never modify these files.
-  If one of them misbehaves, do not touch it — report it in your summary.
+- `english/`, `si.go`, `bigbytes.go`, and `big.go` are normally synced from the upstream
+  unit-formatting module. Keep changes there minimal and compatible with upstream; do not make
+  unrelated edits or generated-file churn.
 
 ## Working rules
 
 - Keep changes small and focused on the reported problem.
+- When a failing test demonstrates a defect, fix the implementation, including synced code when
+  necessary, rather than changing a correct expected value to match defective behavior.
+- Expected values in `*_test.go` are golden outputs. Update one only when the requested or
+  established behavior has intentionally changed.
 - Do not run `go test` locally; the suite is slow and CI runs it on every push. Use `go build ./...`
   and `go vet ./...` to check your change compiles.
-- Expected values in `*_test.go` are golden outputs. If a test disagrees with the code, treat the
-  code as the source of truth and update the expected value in the test.
 - Keep code gofmt-formatted.
 
 ## Tooling policy

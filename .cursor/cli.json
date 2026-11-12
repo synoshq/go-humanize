@@ -10,14 +10,6 @@
       "Shell(go vet)"
     ],
     "deny": [
-      "Write(english/**)",
-      "Write(**/english/**)",
-      "Write(si.go)",
-      "Write(**/si.go)",
-      "Write(bigbytes.go)",
-      "Write(**/bigbytes.go)",
-      "Write(big.go)",
-      "Write(**/big.go)",
       "Shell(go test)",
       "Shell(go run)",
       "Shell(go generate)",
