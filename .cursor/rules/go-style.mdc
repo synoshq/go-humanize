@@ -1,0 +1,10 @@
+---
+description: Go style for go-humanize
+globs: "**/*.go"
+alwaysApply: false
+---
+
+- Follow standard Go style (gofmt formatting).
+- Prefer table-driven tests when adding coverage.
+- Exported functions need a doc comment that starts with the function name.
+- Do not change exported function signatures.
